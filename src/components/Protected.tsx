@@ -21,6 +21,9 @@ export const Protected = ({ children }: ProtectedProps) => {
 	if (isError) {
 		return <Navigate to="/login" replace={true} />;
 	}
+	axios.defaults.headers.common[
+		"Authorization"
+	] = `Bearer ${localStorage.getItem("token")}`;
 
 	return (
 		<>

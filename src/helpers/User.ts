@@ -1,5 +1,4 @@
 import axios, { AxiosError } from "axios";
-import { type } from "os";
 import { useQuery } from "react-query";
 import { serverURL } from "./server";
 
@@ -85,7 +84,7 @@ export const getUser = async () => {
 	};
 
 	const response = await axios(config);
-	return response.status === 200;
+	return response.data;
 };
 
 export const useUser = () =>
